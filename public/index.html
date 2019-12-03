@@ -79,7 +79,13 @@
 					<a id="EXISTS " draggable="true" ondragstart="drag(event)">EXISTS </a>
 				</li>
 				<li class="text-center">
+					<a id="IN " draggable="true" ondragstart="drag(event)">IN </a>
+				</li>
+				<li class="text-center">
 					<a id="NOT " draggable="true" ondragstart="drag(event)">NOT </a>
+				</li>
+				<li class="text-center">
+					<a id="HAVING " draggable="true" ondragstart="drag(event)">HAVING </a>
 				</li>
 			</ul>
 		</nav>
@@ -128,7 +134,8 @@
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="resetform()">Close</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal"
+						onclick="resetform()">Close</button>
 					<button type="button" class="btn btn-primary" onclick="addAtrib()">Añadir
 						atributo</button>
 					<button id="enviarboton" type="button" class="btn btn-primary" onclick="enviar();resetform()">Save
