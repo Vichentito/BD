@@ -27,7 +27,7 @@
 						class="dropdown-toggle text-center">Tablas</a>
 					<ul class="collapse list-unstyled" id="droptablas">
 						<li>
-							
+
 						</li>
 					</ul>
 				</li>
@@ -46,10 +46,19 @@
 					<a id="SELECT " draggable="true" ondragstart="drag(event)">SELECT </a>
 				</li>
 				<li class="text-center">
-					<a id=" FROM" draggable="true" ondragstart="drag(event)"> FROM </a>
+					<a id="COMA " draggable="true" ondragstart="drag(event)">COMA </a>
 				</li>
 				<li class="text-center">
-					<a id="WHERE" draggable="true" ondragstart="drag(event)"> WHERE </a>
+					<a id="PARENTESIS ABRE " draggable="true" ondragstart="drag(event)">PARENTESIS ABRE </a>
+				</li>
+				<li class="text-center">
+					<a id="PARENTESIS CIERRA " draggable="true" ondragstart="drag(event)">PARENTESIS CIERRA </a>
+				</li>
+				<li class="text-center">
+					<a id="FROM" draggable="true" ondragstart="drag(event)">FROM </a>
+				</li>
+				<li class="text-center">
+					<a id="WHERE" draggable="true" ondragstart="drag(event)">WHERE </a>
 				</li>
 				<li class="text-center">
 					<a id="AND" draggable="true" ondragstart="drag(event)">AND </a>
@@ -58,30 +67,45 @@
 					<a id="OR " draggable="true" ondragstart="drag(event)">OR </a>
 				</li>
 				<li class="text-center">
+					<a id="= " draggable="true" ondragstart="drag(event)">= </a>
+				</li>
+				<li class="text-center">
 					<a id="JOIN " draggable="true" ondragstart="drag(event)">JOIN </a>
 				</li>
 				<li class="text-center">
 					<a id="ON " draggable="true" ondragstart="drag(event)">ON </a>
 				</li>
 				<li class="text-center">
-					<a id="= " draggable="true" ondragstart="drag(event)">= </a>
+					<a id="EXISTS " draggable="true" ondragstart="drag(event)">EXISTS </a>
 				</li>
-				
+				<li class="text-center">
+					<a id="NOT " draggable="true" ondragstart="drag(event)">NOT </a>
+				</li>
 			</ul>
 		</nav>
 
 		<!-- Page Content  -->
 		<div id="content">
 			<h3>CREA AQUI TU SENTENCIA SQL</h3>
-			<div class="sentencias row">
-				<div id="div1"  ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<button id="validar" class="text-center" onclick="validar()">Validar Sentencia</button>
-				<button id="borrar" class="text-center" onclick="borrar()">Borrar</button>
+			<div class="sentencias row container">
+				<div class="col-2">
+					<div id="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<p class="text-center">SUELTA AQUI!</p>
+					</div>
+					<button id="borrar" class="text-center" onclick="borrar()">Borrar (<<-- UNO)</button> </div> <div
+							class="col">
+							<div id="div1" class="row">
+							</div>
+				</div>
+
 			</div>
-			<div class="row">
-				<div id= "response" class="response"></div>
+			<div class="row container">
+				<div id="response" class="response"></div>
 			</div>
 			<div class="line"></div>
+			<div class="row container">
+				<button id="validar" class="text-center" onclick="validar()">Validar Sentencia</button>
+			</div>
 		</div>
 	</div>
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -96,7 +120,6 @@
 
 				</div>
 				<div class="modal-body">
-					<h5>Primero añade tantos campos de atributos como vayas a necesitar, luego llenalos</h5>
 					<form id="form_tabla">
 						<div class="form-group">
 							<label for="tableName">Tabla</label>
@@ -105,9 +128,10 @@
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary" onclick="addAtrib()">Añadir atributo</button>
-					<button id="enviarboton" type="button" class="btn btn-primary" onclick="enviar()">Save
+					<button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="resetform()">Close</button>
+					<button type="button" class="btn btn-primary" onclick="addAtrib()">Añadir
+						atributo</button>
+					<button id="enviarboton" type="button" class="btn btn-primary" onclick="enviar();resetform()">Save
 						changes</button>
 				</div>
 			</div>
